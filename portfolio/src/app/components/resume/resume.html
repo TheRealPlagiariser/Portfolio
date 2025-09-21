@@ -1,0 +1,18 @@
+<div class="resume-toggle-buttons">
+	<button 
+		(click)="toggleFrenchResume()" 
+		[class.active]="showFrenchResume"
+		aria-pressed="{{showFrenchResume}}"
+	>
+		{{ showFrenchResume ? 'Masquer le CV Français' : 'Afficher le CV Français' }}
+	</button>
+	<button 
+		(click)="toggleEnglishResume()" 
+		[class.active]="showEnglishResume"
+		aria-pressed="{{showEnglishResume}}"
+	>
+		{{ showEnglishResume ? 'Hide English Resume' : 'Show English Resume' }}
+	</button>
+</div>
+<app-french-resume *ngIf="showFrenchResume"></app-french-resume>
+<app-english-resume *ngIf="showEnglishResume"></app-english-resume>
